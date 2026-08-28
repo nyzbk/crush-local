@@ -1,5 +1,14 @@
 import { FAQ } from "@/content/faq";
 
+export function pageHead(title: string, description: string) {
+  return {
+    meta: [
+      { title: `${title} | Crush` },
+      { name: "description", content: description },
+    ],
+  };
+}
+
 export function JsonLd() {
   const faq = {
     "@context": "https://schema.org",
@@ -19,7 +28,7 @@ export function JsonLd() {
     operatingSystem: "Any",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     description:
-      "Compress JPG, PNG and WebP images in the browser. No upload, no signup, no watermark.",
+      "Compress JPG, PNG and WebP images in the browser with Canvas. No upload, no signup, no watermark.",
   };
   return (
     <>

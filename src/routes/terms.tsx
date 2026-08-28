@@ -1,31 +1,45 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
+import { Article } from "@/components/site/Article";
+import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/terms")({ component: Terms });
+export const Route = createFileRoute("/terms")({
+  component: Terms,
+  head: () =>
+    pageHead(
+      "Terms — Crush",
+      "Crush is a free as-is image compressor. Quality depends on your browser. You must have the right to process the files you drop.",
+    ),
+});
 
 function Terms() {
   return (
     <AppShell>
-      <main className="mx-auto max-w-2xl px-4 py-12">
-        <h1 className="font-display text-4xl">Terms</h1>
-        <p className="mt-2 text-sm text-muted">Last updated: 23 August 2026</p>
-        <p className="mt-6 text-pretty">
-          Crush is provided as-is, free of charge. Compression quality depends on your browser and device memory. We do
-          not warrant that every file will encode, or that a smaller file is always produced (some already-optimized
-          images can grow slightly).
+      <Article title="Terms" updated="Last updated: 28 August 2026">
+        <p>
+          Crush is provided free of charge, as-is. Compression quality, output size, and whether a given file encodes
+          at all depend on your browser, device memory, and the input. We do not warrant that every file shrinks. Some
+          already-optimized images grow slightly after a Canvas round-trip.
         </p>
-        <p className="mt-4 text-pretty text-muted">
+        <p>
           You are responsible for having the right to process the images you drop here. Do not use Crush to violate
-          copyright or privacy of others.
+          copyright, privacy, or other law. Do not upload others’ private photos to a chat after compressing them if
+          you lacked the right to have them in the first place — Crush does not grant that right.
         </p>
-        <p className="mt-4 text-pretty text-muted">
-          No watermark is added. No daily quota is enforced by us. The only limit is this device’s memory.
+        <p>
+          No watermark is added. No daily quota is enforced by us. The only operational limit is this device’s memory
+          and the type guard (still images, not video).
         </p>
-        <p className="mt-4 text-pretty text-muted">
-          Ads, when live, are served by Google AdSense under Google’s policies. Soft studio notes on this site are not
-          advertisements.
+        <p>
+          Ads, when live, are served by Google AdSense under Google’s policies. Placeholder slots on the page before
+          approval are not clickable ads. Soft studio notes are not advertisements. Do not click ads on your own site
+          to “test” them.
         </p>
-      </main>
+        <p>
+          Output files are yours to keep. We do not retain a server copy, so we cannot restore a session. See{" "}
+          <Link to="/privacy">Privacy</Link> and <Link to="/contact">Contact</Link>.
+        </p>
+      </Article>
     </AppShell>
   );
 }
