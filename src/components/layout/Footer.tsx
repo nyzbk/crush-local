@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { AdUnit } from "@/components/ads/AdUnit";
-import { LEGAL_NAV, PRIMARY_NAV } from "@/lib/nav";
+import { EXTRA_FOOTER_NAV, LEGAL_NAV, PRIMARY_NAV } from "@/lib/nav";
 
 export function Footer() {
   return (
@@ -12,7 +12,7 @@ export function Footer() {
             Crush compresses JPG, PNG and WebP in this browser. Files stay on the device. No watermark.
           </p>
           <nav className="flex flex-wrap gap-x-4 gap-y-2" aria-label="Site">
-            {[...PRIMARY_NAV, ...LEGAL_NAV].map((item) => (
+            {[...PRIMARY_NAV, ...EXTRA_FOOTER_NAV, ...LEGAL_NAV].map((item) => (
               <Link key={item.to} to={item.to} className="min-h-11 inline-flex items-center hover:text-ink">
                 {item.label}
               </Link>

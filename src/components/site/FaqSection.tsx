@@ -1,11 +1,18 @@
-import { FAQ } from "@/content/faq";
+import { FAQ, type FaqItem } from "@/content/faq";
 
-export function FaqSection({ hideHeading = false }: { hideHeading?: boolean }) {
+export function FaqSection({
+  hideHeading = false,
+  items,
+}: {
+  hideHeading?: boolean;
+  items?: readonly FaqItem[];
+}) {
+  const list = items ?? FAQ;
   return (
     <section className="mx-auto max-w-3xl px-4 pb-4">
       {hideHeading ? null : <h2 className="font-display text-2xl text-ink">FAQ</h2>}
       <div className="mt-6 divide-y divide-line border-y border-line">
-        {FAQ.map((item) => (
+        {list.map((item) => (
           <details key={item.q} className="group py-4">
             <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 font-medium text-ink">
               <span>{item.q}</span>
