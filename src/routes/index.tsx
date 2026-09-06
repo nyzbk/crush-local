@@ -13,9 +13,9 @@ function Home() {
     <AppShell>
       <JsonLd />
       <main className="mx-auto max-w-3xl px-4 py-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Private · in your browser</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Private \u00b7 in your browser</p>
         <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
-          Compress JPG, PNG and WebP in the browser — no upload
+          Compress JPG, PNG and WebP in the browser \u2014 no upload
         </h1>
         <p className="mt-4 max-w-2xl text-pretty leading-relaxed text-muted">
           Crush shrinks photos on this device with the Canvas API. You set JPEG or WebP quality, optionally cap width or
@@ -23,8 +23,8 @@ function Home() {
           the pixels.
         </p>
         <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted">
-          Most “free compressors” send the original to a machine you do not control, then mail you a link. That is
-          convenient until the photo is a passport scan, a client moodboard, or a kid’s birthday. Crush never posts
+          Most \u201cfree compressors\u201d send the original to a machine you do not control, then mail you a link. That is
+          convenient until the photo is a passport scan, a client moodboard, or a kid\u2019s birthday. Crush never posts
           image bytes. After the page has loaded you can even turn the radio off and keep working.
         </p>
         <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-muted">
@@ -33,7 +33,7 @@ function Home() {
           <Link to="/quality" className="text-copper-deep underline underline-offset-2">
             JPG vs WebP
           </Link>{" "}
-          explains when 8×8 JPEG blocks show up and when WebP is wasted because the site still rejects it.{" "}
+          explains when 8\u00d78 JPEG blocks show up and when WebP is wasted because the site still rejects it.{" "}
           <Link to="/how-to" className="text-copper-deep underline underline-offset-2">
             How to compress
           </Link>{" "}
@@ -48,15 +48,15 @@ function Home() {
         <h2 className="font-display text-2xl text-ink">What Crush will and will not do</h2>
         <p className="mt-3 leading-relaxed text-pretty text-muted">
           Crush re-encodes still images. It is not a HEIC converter (iPhone Camera rolls need a different codec), not a
-          video compressor, and not an animation optimizer — a GIF is flattened to its first frame. It is also not an
+          video compressor, and not an animation optimizer \u2014 a GIF is flattened to its first frame. It is also not an
           archival master: Canvas output drops GPS, camera serial, and most ICC complexity. Keep the original if you
           need print color or captions.
         </p>
         <p className="mt-3 leading-relaxed text-pretty text-muted">
-          The useful quality band for photographs is roughly 75–85 on the JPEG/WebP slider. Below ~60 you buy file size
+          The useful quality band for photographs is roughly 75\u201385 on the JPEG/WebP slider. Below ~60 you buy file size
           with blocky skies and ringing around type. Screenshots should stay PNG or go to WebP, not JPEG. Resizing a
           12-megapixel still down to the width you actually display often saves more bytes than chasing another five
-          points of quality. Limits are this device’s memory, not a daily quota we invented.
+          points of quality. Limits are this device\u2019s memory, not a daily quota we invented.
         </p>
         <p className="mt-3 leading-relaxed text-pretty text-muted">
           Browsers: current Chrome, Edge, Firefox, and Safari, including iOS. WebP encode is probed; if this engine
@@ -74,7 +74,7 @@ function Home() {
           <Link to="/contact" className="text-copper-deep underline underline-offset-2">
             contact
           </Link>{" "}
-          has the operator email — there is no server copy of your files to “retrieve.”
+          has the operator email \u2014 there is no server copy of your files to \u201cretrieve.\u201d
         </p>
         <ul className="mt-5 grid gap-2 text-sm sm:grid-cols-2">
           <li>
@@ -95,6 +95,21 @@ function Home() {
           <li>
             <Link to="/faq" className="text-copper-deep underline underline-offset-2">
               Full FAQ
+            </Link>
+          </li>
+          <li>
+            <Link to="/whatsapp" className="text-copper-deep underline underline-offset-2">
+              Stop WhatsApp from crushing the photo again
+            </Link>
+          </li>
+          <li>
+            <Link to="/email" className="text-copper-deep underline underline-offset-2">
+              Fit photos under a 25 MB email cap
+            </Link>
+          </li>
+          <li>
+            <Link to="/iphone" className="text-copper-deep underline underline-offset-2">
+              Save the result from Safari on iPhone
             </Link>
           </li>
         </ul>
