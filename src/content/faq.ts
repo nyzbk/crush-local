@@ -1,4 +1,6 @@
-export const FAQ = [
+export type FaqItem = { q: string; a: string };
+
+export const FAQ: FaqItem[] = [
   {
     q: "Does Crush upload my photos to a server?",
     a: "No. Crush never posts image bytes to an API. After you pick files, the browser reads them with FileReader / createImageBitmap, draws them onto a Canvas, and encodes a new blob with canvas.toBlob. That work happens in this tab’s memory. Closing the tab discards the bitmaps. Hosting may log that you requested the HTML page (IP, user-agent), which is normal for any public site, but those logs do not contain your photos. You can load Crush, disconnect from the network, and still compress files that are already on the device.",
@@ -55,4 +57,47 @@ export const FAQ = [
     q: "Who runs Crush and how do I report a broken file?",
     a: "Crush is a free local-first tool from Ultimatum, a brand-marketing studio. Write to ultaultimatum@gmail.com with the browser name, device, input format, and whether the failure was encode, download, or ZIP. Do not attach private photos unless you accept that email is not an end-to-end vault. We cannot restore a file you already closed out of the tab — there is no server copy. Product questions that are already answered on How to and JPG vs WebP will get a pointer to those pages.",
   },
-] as const;
+  {
+    q: "Why does a photo still look bad after I send it in WhatsApp?",
+    a: "Because the chat probably recoded it as a photo. Crush cannot switch WhatsApp’s encoder off. Start from the camera original, cap the long edge around 1600 px, JPEG 75–85, then attach the result as a document / file when the app allows. Saving an image from an old bubble and running that through Crush will not restore detail. Full path: the WhatsApp guide.",
+  },
+  {
+    q: "Gmail turned my photos into a Drive link. Did Crush fail?",
+    a: "No. Gmail does that when the message attachments go over about 25 MB in total. MIME encoding also inflates the files. Cap width, encode JPEG 75–85, add the new sizes, and leave headroom. Crush does not send mail and does not create a Drive link. Details: the email guide.",
+  },
+  {
+    q: "I tapped download on iPhone and nothing landed in Files. Where is the picture?",
+    a: "Safari often ignores a raw blob download. Use Share on the result and Save Image to Photos or Save to Files. Then check the new file’s size so you do not attach the original by mistake. Encode fewer 48MP stills at a time if the tab reloads. Step-by-step: the iPhone guide.",
+  },
+  {
+    q: "Should I pick WebP for WhatsApp or for a visa form?",
+    a: "Usually no. Many chats and almost all bureaucratic uploaders still want JPEG. WebP is the smaller file on a modern website that already serves WebP. If the destination list says .jpg, obey the list. Compare one hero on the quality page before you batch.",
+  },
+];
+
+export const whatsappFaq: FaqItem[] = FAQ.filter((item) =>
+  [
+    "Why does a photo still look bad after I send it in WhatsApp?",
+    "Should I pick WebP for WhatsApp or for a visa form?",
+    "When does JPEG look blocky, and what quality should I use?",
+    "Does Crush work on iPhone and iPad?",
+  ].includes(item.q),
+);
+
+export const emailFaq: FaqItem[] = FAQ.filter((item) =>
+  [
+    "Gmail turned my photos into a Drive link. Did Crush fail?",
+    "Should I pick WebP for WhatsApp or for a visa form?",
+    "Can I resize and compress in one pass?",
+    "When should I pick WebP instead of JPEG?",
+  ].includes(item.q),
+);
+
+export const iphoneFaq: FaqItem[] = FAQ.filter((item) =>
+  [
+    "I tapped download on iPhone and nothing landed in Files. Where is the picture?",
+    "Does Crush work on iPhone and iPad?",
+    "Does Crush keep EXIF, GPS, or color profiles?",
+    "Is there a file-count or daily limit?",
+  ].includes(item.q),
+);
