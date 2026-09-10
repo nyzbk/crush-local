@@ -101,3 +101,23 @@ export const iphoneFaq: FaqItem[] = FAQ.filter((item) =>
     "Is there a file-count or daily limit?",
   ].includes(item.q),
 );
+
+export const targetFaq: FaqItem[] = [
+  {
+    q: "Is this the same as the quality slider on the homepage?",
+    a: "No. The homepage asks how the picture should look. This page asks for a number of bytes. It retries JPEG quality then long-edge size, up to 14 encodes, and reports a miss instead of pretending the file is under the cap.",
+  },
+  {
+    q: "Why did a PNG become JPEG?",
+    a: "Under a 500 KB cap, PNG of a photo almost never fits. This page switches to JPEG and labels the row. Keep PNG only when the destination requires it and the cap is large enough.",
+  },
+  {
+    q: "I picked 200 KB for WhatsApp. Will the chat still recode it?",
+    a: "Yes, possibly. 200 KB and 1 MB here are file-on-disk presets before you send. WhatsApp can still recode after you tap send. That recode is documented on the WhatsApp page, not in this control.",
+  },
+  {
+    q: "The row says still over cap after 14 tries. Is the tool broken?",
+    a: "No. Fourteen encodes is the stop so a huge PNG cannot freeze the tab. Crop the frame or change format. This encoder will not invent a 50 KB lossless PNG of a 48 MP photo.",
+  },
+];
+

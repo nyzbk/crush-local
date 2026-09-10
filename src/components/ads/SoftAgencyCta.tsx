@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+const HUB = "https://ultimatum-hub.vercel.app/";
 
 export function SoftAgencyCta() {
   return (
@@ -7,12 +7,14 @@ export function SoftAgencyCta() {
       <p className="mt-2 text-sm text-muted text-pretty">
         Crush is a free tool from Ultimatum. We also build brand identity, private utilities, and $10k websites.
       </p>
-      <Link
-        to="/about"
+      <a
+        href={HUB}
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-copper-deep underline-offset-4 hover:underline"
       >
-        About the studio
-      </Link>
+        Ultimatum hub
+      </a>
     </section>
   );
 }

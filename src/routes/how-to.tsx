@@ -101,6 +101,7 @@ function HowTo() {
         </ul>
         <p>
           Destination-specific guides:{" "}
+          <Link to="/target">fit under a byte cap</Link>,{" "}
           <Link to="/whatsapp">WhatsApp and other chats</Link>,{" "}
           <Link to="/email">email and form caps</Link>,{" "}
           <Link to="/iphone">iPhone Safari downloads</Link>. Codec math stays on{" "}

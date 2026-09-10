@@ -78,6 +78,11 @@ function Home() {
         </p>
         <ul className="mt-5 grid gap-2 text-sm sm:grid-cols-2">
           <li>
+            <Link to="/target" className="text-copper-deep underline underline-offset-2">
+              Fit a file under 50 KB, 200 KB or 2 MB
+            </Link>
+          </li>
+          <li>
             <Link to="/how-to" className="text-copper-deep underline underline-offset-2">
               Step-by-step how to
             </Link>
