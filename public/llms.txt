@@ -1,0 +1,37 @@
+# Crush
+
+> Compress JPG, PNG and WebP in the browser with Canvas. No upload, no watermark.
+
+The public origin is https://crush-local.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
+
+## Tools
+
+* [Compress](https://crush-local.vercel.app) — Batch JPG/PNG/WebP in this tab.
+
+## Guides
+
+* [How to compress](https://crush-local.vercel.app/how-to) — Drop, quality, ZIP.
+* [Target size](https://crush-local.vercel.app/target) — Aim at a byte budget.
+* [WhatsApp](https://crush-local.vercel.app/whatsapp) — Chat recode vs document.
+* [Email](https://crush-local.vercel.app/email) — Gmail 25 MB is the letter.
+* [iPhone](https://crush-local.vercel.app/iphone) — Files vs Photos.
+* [Quality](https://crush-local.vercel.app/quality) — What Canvas can and cannot keep.
+* [Use cases](https://crush-local.vercel.app/use-cases) — Portal, listing, deck.
+* [FAQ](https://crush-local.vercel.app/faq) — Privacy and limits.
+
+## Site pages
+
+* [About](https://crush-local.vercel.app/about) — Operator and what this tool refuses to be.
+* [Contact](https://crush-local.vercel.app/contact) — ultaultimatum@gmail.com
+* [Privacy](https://crush-local.vercel.app/privacy) — Bytes stay in the tab.
+* [Terms](https://crush-local.vercel.app/terms) — Not a studio, not a host.
+* [FAQ](https://crush-local.vercel.app/faq) — Short answers.
+
+## Site
+
+* [Sitemap](https://crush-local.vercel.app/sitemap.xml)
+* [llms.txt](https://crush-local.vercel.app/llms.txt) — This file.
+
+## Not on this origin
+
+* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.
