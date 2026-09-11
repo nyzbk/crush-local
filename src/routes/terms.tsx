@@ -9,6 +9,7 @@ export const Route = createFileRoute("/terms")({
     pageHead(
       "Terms — Crush",
       "Crush is a free as-is image compressor. Quality depends on your browser. You must have the right to process the files you drop.",
+      "/terms",
     ),
 });
 

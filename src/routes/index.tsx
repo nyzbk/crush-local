@@ -4,14 +4,36 @@ import { CompressorApp } from "@/components/crush/CompressorApp";
 import { HowItWorks } from "@/components/site/HowItWorks";
 import { FaqSection } from "@/components/site/FaqSection";
 import { SoftAgencyCta } from "@/components/ads/SoftAgencyCta";
-import { JsonLd } from "@/lib/seo";
+import { FAQ } from "@/content/faq";
+import { toolHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/")({ component: Home });
+const HOME_TITLE = "Free Image Compressor — Compress JPG PNG WebP Online, No Upload";
+const HOME_DESC =
+  "Free image compressor — shrink JPG, PNG and WebP in your browser. Batch, quality control, ZIP download. No upload, no signup, no watermark.";
+const HOME_STEPS = [
+  "Drop JPG, PNG or WebP files. Bytes stay in this tab. HEIC is refused on purpose.",
+  "Pick JPEG, PNG or WebP out, set quality, optionally cap width or height.",
+  "Tap Compress. Canvas re-encodes on this device. Nothing is posted to a server.",
+  "Download one file or a ZIP. Closing the tab discards the bitmaps.",
+];
+
+export const Route = createFileRoute("/")({
+  component: Home,
+  head: () =>
+    toolHead({
+      title: HOME_TITLE,
+      description: HOME_DESC,
+      path: "/",
+      appName: "Crush — Free Image Compressor",
+      faqs: FAQ.slice(0, 4),
+      howToName: "How to compress JPG, PNG and WebP in the browser",
+      howToSteps: HOME_STEPS,
+    }),
+});
 
 function Home() {
   return (
     <AppShell>
-      <JsonLd />
       <main className="mx-auto max-w-3xl px-4 py-10">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Private \u00b7 in your browser</p>
         <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">

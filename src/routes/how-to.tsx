@@ -1,15 +1,25 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
 import { Article } from "@/components/site/Article";
-import { pageHead } from "@/lib/seo";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/how-to")({
   component: HowTo,
   head: () =>
-    pageHead(
-      "How to compress images in the browser",
-      "Step-by-step: quality slider, max size, JPEG vs WebP, iOS download, ZIP, and the mistakes that make photos look blocky.",
-    ),
+    articleHead({
+      title: "How to compress images in the browser",
+      description:
+        "Step-by-step: quality slider, max size, JPEG vs WebP, iOS download, ZIP, and the mistakes that make photos look blocky.",
+      path: "/how-to",
+      appName: "How to compress with Crush",
+      howToName: "How to compress a photo with Crush",
+      howToSteps: [
+        "Drop stills. JPG, PNG and WebP stay in this tab.",
+        "Choose output format. JPEG for forms, WebP for modern sites, PNG for screenshots.",
+        "Set quality around 75-85. Cap the long edge if the destination is small.",
+        "Compress, then download or ZIP. On iPhone use Share into Files.",
+      ],
+    }),
 });
 
 function HowTo() {

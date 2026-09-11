@@ -1,15 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
 import { FaqSection } from "@/components/site/FaqSection";
-import { pageHead } from "@/lib/seo";
+import { FAQ } from "@/content/faq";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/faq")({
   component: FaqPage,
   head: () =>
-    pageHead(
-      "FAQ — uploads, quality, iOS, ZIP, EXIF",
-      "Answers about Crush’s local Canvas pipeline: no upload, JPEG vs WebP, iPhone downloads, ZIP privacy, and metadata.",
-    ),
+    articleHead({
+      title: "FAQ — uploads, quality, iOS, ZIP, EXIF",
+      description:
+        "Answers about Crush local Canvas pipeline: no upload, JPEG vs WebP, iPhone downloads, ZIP privacy, and metadata.",
+      path: "/faq",
+      appName: "Crush FAQ",
+      includeApp: false,
+      faqs: FAQ,
+    }),
 });
 
 function FaqPage() {

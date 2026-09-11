@@ -3,15 +3,26 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Article } from "@/components/site/Article";
 import { FaqSection } from "@/components/site/FaqSection";
 import { emailFaq } from "@/content/faq";
-import { pageHead } from "@/lib/seo";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/email")({
   component: EmailGuide,
   head: () =>
-    pageHead(
-      "Fit photos under Gmail and Outlook attachment caps",
-      "Gmail send is still about 25 MB for the whole message. Resize and JPEG the stills here, then attach. Crush does not mint a Drive link.",
-    ),
+    articleHead({
+      title: "Fit photos under Gmail and Outlook attachment caps",
+      description:
+        "Gmail send is still about 25 MB for the whole message. Resize and JPEG the stills here, then attach. Crush does not mint a Drive link.",
+      path: "/email",
+      appName: "Email photo size",
+      faqs: emailFaq,
+      howToName: "How to fit photos under a Gmail attachment cap",
+      howToSteps: [
+        "Add the sizes of every file on the draft. The cap is the letter, not one photo.",
+        "Cap the long edge and encode JPEG around 75-85 on this page.",
+        "Leave headroom for MIME. A 22 MB folder can fail as mail.",
+        "Attach the new files. Crush does not send email and does not mint a Drive link.",
+      ],
+    }),
 });
 
 function EmailGuide() {

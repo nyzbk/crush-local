@@ -9,6 +9,7 @@ export const Route = createFileRoute("/privacy")({
     pageHead(
       "Privacy — Crush",
       "Crush compresses images in the browser. Photos are not uploaded for processing. Hosting logs and AdSense cookies are explained here.",
+      "/privacy",
     ),
 });
 

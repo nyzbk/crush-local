@@ -3,15 +3,26 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Article } from "@/components/site/Article";
 import { FaqSection } from "@/components/site/FaqSection";
 import { whatsappFaq } from "@/content/faq";
-import { pageHead } from "@/lib/seo";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/whatsapp")({
   component: WhatsAppGuide,
   head: () =>
-    pageHead(
-      "Stop WhatsApp from recompressing your photos",
-      "Chats recode a photo you send as an image. Compress first on this device, cap the long edge, then attach as a document when the app allows. No upload.",
-    ),
+    articleHead({
+      title: "Stop WhatsApp from recompressing your photos",
+      description:
+        "Chats recode a photo you send as an image. Compress first on this device, cap the long edge, then attach as a document when the app allows. No upload.",
+      path: "/whatsapp",
+      appName: "WhatsApp photo size",
+      faqs: whatsappFaq,
+      howToName: "How to send a photo in WhatsApp without a second recode",
+      howToSteps: [
+        "Compress the still here and cap the long edge before you open the chat.",
+        "Prefer JPEG. Many chats still recode WebP or a huge PNG.",
+        "Send as Document when the app offers it, not as a camera Photo.",
+        "This page does not stop WhatsApp recode. It only prepares a smaller file.",
+      ],
+    }),
 });
 
 function WhatsAppGuide() {

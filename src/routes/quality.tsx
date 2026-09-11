@@ -9,6 +9,7 @@ export const Route = createFileRoute("/quality")({
     pageHead(
       "JPEG artifacts vs WebP — when each format wins",
       "Why JPEG grows 8×8 blocks, when WebP is smaller, and when Crush should output PNG instead of either lossy codec.",
+      "/quality",
     ),
 });
 

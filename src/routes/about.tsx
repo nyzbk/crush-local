@@ -9,6 +9,7 @@ export const Route = createFileRoute("/about")({
     pageHead(
       "About Crush",
       "Crush is a local-first JPG/PNG/WebP compressor: Canvas in the browser, no upload, no watermark. Built by Ultimatum.",
+      "/about",
     ),
 });
 

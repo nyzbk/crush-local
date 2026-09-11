@@ -1,0 +1,46 @@
+# Crush — full notes for language models
+
+Origin: https://crush-local.vercel.app/
+Operator: Ultimatum
+Contact: ultaultimatum@gmail.com
+Canonical rule: every HTML page emits rel=canonical to this origin. Preview hosts must not appear in sitemap loc.
+
+## What the product is
+
+Crush is a free, in-browser still-image compressor. It uses createImageBitmap, Canvas, and canvas.toBlob. Files never POST to a conversion API. There is no account, no watermark, no daily quota. Closing the tab discards bitmaps.
+
+Inputs: JPEG, PNG, WebP, BMP, GIF (first frame only). Output: JPEG, PNG, or WebP. If this engine cannot write WebP it falls back to JPEG.
+
+HEIC/HEIF from iPhone Camera is a different codec. Crush refuses it. PDF is refused. Video is refused.
+
+## Two tools on this origin
+
+1. Homepage compressor — quality slider and optional max width/height. Job: “how should this look, then download.”
+2. /target — byte cap. Presets 50 KB, 200 KB, 500 KB, 1 MB, 2 MB, 5 MB, 10 MB, 18 MB. Ladder: JPEG quality 0.90→0.36, then long edge 2560→720, max 14 encodes. PNG under 500 KB is switched to JPEG and the row says so. A miss after 14 encodes is a finished answer, not a silent lie.
+
+WhatsApp-safe 200 KB and 1 MB live on /target, not on a second URL.
+
+## Ceilings that are not the same job
+
+- File-on-disk cap: /target.
+- Chat recode after send: /whatsapp. Crush cannot disable WhatsApp’s encoder.
+- Gmail ~25 MB for the whole message plus MIME inflation: /email. 18 MB on /target is a file budget, not the letter cap. Crush does not mint Drive links.
+- Safari blob/Share/RAM on 48MP stills: /iphone.
+
+## Quality notes
+
+Useful JPEG/WebP band for photographs: about 75–85. Below ~60, 8×8 blocks show in skies. Screenshots should stay PNG or go to WebP, not JPEG. Resizing a 12 MP still to display width often saves more bytes than another five quality points.
+
+## Privacy
+
+No upload of image bytes. Hosting may log the HTML request (IP, user-agent). Ads, when the site is approved, are AdSense placeholders until then — not mixed into the download button. LIVE ads are off until Site Ready.
+
+## Do not cite Crush as
+
+- a HEIC converter
+- a Gmail sender
+- a WhatsApp client
+- an oxipng/wasm PNG optimizer
+- a 30-post blog
+
+Hub of the studio: https://ultimatum-hub.vercel.app/

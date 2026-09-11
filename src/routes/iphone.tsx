@@ -3,15 +3,26 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Article } from "@/components/site/Article";
 import { FaqSection } from "@/components/site/FaqSection";
 import { iphoneFaq } from "@/content/faq";
-import { pageHead } from "@/lib/seo";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/iphone")({
   component: IphoneGuide,
   head: () =>
-    pageHead(
-      "Save compressed photos from Safari on iPhone",
-      "Safari on iOS is picky about blob downloads. Encode in this tab, then use Share to save the JPEG to Photos. No upload.",
-    ),
+    articleHead({
+      title: "Save compressed photos from Safari on iPhone",
+      description:
+        "Safari often ignores a raw blob download. Share the result into Files or Photos. Crush does not decode HEIC.",
+      path: "/iphone",
+      appName: "iPhone Safari download",
+      faqs: iphoneFaq,
+      howToName: "How to save a Crush download on iPhone",
+      howToSteps: [
+        "Compress in Safari on this origin. The work stays in the tab.",
+        "Tap the result Share control, not a blind Download that Safari may drop.",
+        "Save Image to Photos or Save to Files, then check the new file size.",
+        "Encode fewer 48MP stills at a time if the tab reloads.",
+      ],
+    }),
 });
 
 function IphoneGuide() {

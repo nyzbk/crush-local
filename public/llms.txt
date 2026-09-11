@@ -6,12 +6,12 @@ The public origin is https://crush-local.vercel.app. Operated by Ultimatum. Cont
 
 ## Tools
 
-* [Compress](https://crush-local.vercel.app) — Batch JPG/PNG/WebP in this tab.
+* [Compress](https://crush-local.vercel.app/) — Batch JPG/PNG/WebP in this tab.
+* [Target size](https://crush-local.vercel.app/target) — Fit a still under a byte cap.
 
 ## Guides
 
 * [How to compress](https://crush-local.vercel.app/how-to) — Drop, quality, ZIP.
-* [Target size](https://crush-local.vercel.app/target) — Aim at a byte budget.
 * [WhatsApp](https://crush-local.vercel.app/whatsapp) — Chat recode vs document.
 * [Email](https://crush-local.vercel.app/email) — Gmail 25 MB is the letter.
 * [iPhone](https://crush-local.vercel.app/iphone) — Files vs Photos.
@@ -25,13 +25,13 @@ The public origin is https://crush-local.vercel.app. Operated by Ultimatum. Cont
 * [Contact](https://crush-local.vercel.app/contact) — ultaultimatum@gmail.com
 * [Privacy](https://crush-local.vercel.app/privacy) — Bytes stay in the tab.
 * [Terms](https://crush-local.vercel.app/terms) — Not a studio, not a host.
-* [FAQ](https://crush-local.vercel.app/faq) — Short answers.
 
 ## Site
 
 * [Sitemap](https://crush-local.vercel.app/sitemap.xml)
 * [llms.txt](https://crush-local.vercel.app/llms.txt) — This file.
+* [llms-full.txt](https://crush-local.vercel.app/llms-full.txt) — Longer facts for crawlers.
 
 ## Not on this origin
 
-* Bytes stay in the tab. There is no conversion API and no `/blogs/` cluster.
+* Bytes stay in the tab. There is no conversion API, no HEIC decoder, and no `/blogs/` cluster.

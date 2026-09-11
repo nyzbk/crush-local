@@ -9,6 +9,7 @@ export const Route = createFileRoute("/use-cases")({
     pageHead(
       "When to compress photos locally",
       "Application forms, CMS uploads, WhatsApp lookbooks, and stripping GPS before a public post — without sending the original to a conversion site.",
+      "/use-cases",
     ),
 });
 

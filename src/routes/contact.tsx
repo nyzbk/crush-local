@@ -9,6 +9,7 @@ export const Route = createFileRoute("/contact")({
     pageHead(
       "Contact Crush",
       "Email the operator about Crush, the local image compressor. Include browser, device, and format — files are not stored on a server.",
+      "/contact",
     ),
 });
 

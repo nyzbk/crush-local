@@ -5,15 +5,27 @@ import { FaqSection } from "@/components/site/FaqSection";
 import { SoftAgencyCta } from "@/components/ads/SoftAgencyCta";
 import { TargetApp } from "@/components/crush/TargetApp";
 import { targetFaq } from "@/content/faq";
-import { pageHead } from "@/lib/seo";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/target")({
   component: TargetPage,
   head: () =>
-    pageHead(
-      "Fit an image under 50 KB, 200 KB or 2 MB",
-      "Set a byte cap. Crush retries JPEG quality then long-edge size in this tab until the file fits, or it stops after 14 encodes and says so.",
-    ),
+    articleHead({
+      title: "Fit an image under 50 KB, 200 KB or 2 MB",
+      description:
+        "Set a byte cap. Crush retries JPEG quality then long-edge size in this tab until the file fits, or it stops after 14 encodes and says so.",
+      path: "/target",
+      appName: "Crush target size",
+      faqs: targetFaq,
+      includeApp: true,
+      howToName: "How to fit an image under a byte cap",
+      howToSteps: [
+        "Drop JPG, PNG or WebP. HEIC is refused.",
+        "Pick 50 KB, 200 KB, 1 MB or type a custom number.",
+        "Fit. Quality drops first, then the long edge, max 14 encodes.",
+        "If the row is still over, crop or change format. The encoder will not lie.",
+      ],
+    }),
 });
 
 function TargetPage() {
